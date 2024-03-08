@@ -1078,17 +1078,17 @@
 <h1 id="instalacion-de-una-pila-lamp-en-redhat">Instalación de una pila LAMP en RedHat</h1>
 <h2 id="creacion-de-una-maquina-instancia-ec2-en-aws">Creación de una máquina instancia EC2 en AWS</h2>
 <p>Para crear nuestra instancia EC2, vamos a Amazon EC2 en la consola AWS. Hacemos click al botón naranja <strong>"Lanzar Instancia"</strong> para abrir el asistente de creación de asistencias.</p>
-<p><img alt="Imagen1" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20160014.png" /></p>
+<p><img alt="Imagen1" src="../images/imagen1.png" /></p>
 <h3 id="1-elegimos-una-ami-amazon-machine-image">1. Elegimos una AMI (Amazon Machine Image)</h3>
 <p>En este caso seleccionaremos el AMI de Ubuntu Server 22.04</p>
-<p><img alt="Imagen2" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20160806.png" /></p>
+<p><img alt="Imagen2" src="../images/imagen2.png" /></p>
 <h3 id="2-seleccionamos-un-tipo-de-instancia">2. Seleccionamos un tipo de instancia</h3>
 <p>En la segunda pantalla del asistente de EC2, seleccionamos un tipo de instancia EC2. Un tipo de instancia es una configuración particular de CPU, memoria (RAM), almacenamiento y capacidad de red.</p>
 <p>AWS tiene una amplísima selección de tipos de instancias que abarca diferentes tipos de cargas de trabajo.</p>
-<p><img alt="Imagen3" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20160843.png" /></p>
+<p><img alt="Imagen3" src="../images/imagen3.png" /></p>
 <p><strong>⚠️!!!IMPORTANTE¡¡¡⚠️</strong></p>
 <p>Tenemos que tener en cuenta en el apartado de "Configuración de red" el marcar las casillas para permitir el tráfico en HTTP y HTTPS ya que serán necesarias en la práctica.</p>
-<p><img alt="Imagen4" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20160918.png" /></p>
+<p><img alt="Imagen4" src="../images/imagen4.png" /></p>
 <p>Ya realizada toda la configuración que tendrá nuestra instancia solo nos faltará dar clic al botón naranja <strong>"Lanzar instancia"</strong>.</p>
 <h3 id="3-ip-elastica">3. IP elástica</h3>
 <p>Ya creada la instancia, la página nos asignara una IP por defecto que continuamente va cambiando debido a la escasez de IPs (ya que estas no son ilimitadas). Asignaremos este tipo de IP a nuestra instancia para asi tener una IP estática que no va cambiando diariamente que es diseñada en la nube dinámica.</p>
@@ -1097,11 +1097,11 @@
   - Red y seguridad
     - Direcciones IP elástica</p>
 <p>Empezaremos la creación de nuestra nueva IP elástica dandole clic a <strong>"Asignar la dirección IP elástica"</strong>.</p>
-<p><img alt="Imagen5" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20161002.png" /></p>
+<p><img alt="Imagen5" src="../images/imagen5.png" /></p>
 <p>Al darle clic nos aparecera una ventana donde podremos seleccionar el grupo fronterizo de red, direcciones ip elásticas globales y etiquetas. Cuando realizamos la configuración que mas se adapte a nestras necesidas daremos clic a <strong>"Asignar"</strong>.</p>
-<p><img alt="Imagen6" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20161857.png" /></p>
+<p><img alt="Imagen6" src="../images/imagen6.png" /></p>
 <p>Para asignar esta IP elástica desde el mismo servicio seleccionaremos nuestra IP elástica y le daremos clic a <strong>"Acciones &gt; Asociar la dirección IP elástica"</strong>.</p>
-<p><img alt="Imagen7" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20163443.png" /></p>
+<p><img alt="Imagen7" src="../images/imagen7.png" /></p>
 <h3 id="4-obtener-una-clave-ssh">4. Obtener una clave SSH</h3>
 <p>Para obtener esta clave lo que haremos es dar clic a :</p>
 <ul>
@@ -1116,16 +1116,16 @@
 </ul>
 </li>
 </ul>
-<p><img alt="Imagen8" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20163516.png" /></p>
+<p><img alt="Imagen8" src="../images/imagen8.png" /></p>
 <p>Antes de iniciar la máquina tendremos que cambiar los permisos del vockey.pem</p>
 <p>En el caso de <strong>Windows</strong>, para poder cambiar los permisos he utilizado <strong>Git Bash</strong> (una aplicación para entornos de Microsoft Windows que ofrece una capa de emulación para una experiencia de líneas de comandos de Git) que me permite realizar los cambios de permisos de manera más sencillas al usar comandos linux.</p>
 <p>Lo único que tendremos que hacer sera acceder al directorio por el comando <strong>cd</strong> y ponerle de permisos <strong>chmod 700</strong>.</p>
-<p><img alt="Imagen9" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20163542.png" /></p>
+<p><img alt="Imagen9" src="../images/imagen9.png" /></p>
 <h3 id="5-conexion-a-nuestra-instancia-por-ssh-desde-visual-studio-code">5. Conexión a nuestra instancia por ssh desde Visual Studio Code</h3>
 <p>Antes de empezar la conexion por ssh nos tendremos que instalar una extensión en nuestro Visual Studio Code llamada <strong>"Remote - SSH"</strong> y de forma complementaria su otra extensión <strong>"Remote - SSH: Editing Configuration Files"</strong>.</p>
-<p><img alt="Imagen10" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20173806.png" /></p>
+<p><img alt="Imagen10" src="../images/imagen10.png" /></p>
 <p>Instaladas las extensiones procederemos a editar el archivo <strong>/"Usuario"/.ssh/config</strong> dandole al engranaje que se encuentra al lado de <strong>SSH</strong></p>
-<p><img alt="Imagen11" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20194845.png" /></p>
+<p><img alt="Imagen11" src="../images/imagen11.png" /></p>
 <p>Dentro del archivo escribiremos editaremos las lineas de este archivo de esta manera</p>
 <pre><code>Host Nombre del host de la máquina
 
@@ -1139,7 +1139,7 @@
   User (Nombre de usuario asignado a la máquina que se encuntra en **EC2 &gt; Instancias &gt; Conectar &gt; Conexión de la instancia EC2)
 </code></pre>
 <p>Ahora solo nos queda conectarnos a nuestra instanca por ssh dando clic derecho a nuestra instancia y elegir la conexion en la ventana actual o abrir una nueva ventana.</p>
-<p><img alt="Imagen12" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20195032.png" /></p>
+<p><img alt="Imagen12" src="../images/imagen12.png" /></p>
 <h2 id="instalacion-de-la-pila-lamp-en-la-instancia">Instalación de la pila LAMP en la instancia</h2>
 <h3 id="sh-de-pila-lamp">.sh de pila LAMP</h3>
 <p>Lo primero de todo será realizar una carpeta en nuestra máquina para guardar todos nuestros scripts y poder localizarlos facilmente.</p>
