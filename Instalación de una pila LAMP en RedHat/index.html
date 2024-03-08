@@ -1,0 +1,1319 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../about/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+    
+    
+      
+        <title>Instalacion PILA LAMP RedHat - IAW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalacion-de-una-pila-lamp-en-redhat" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IAW" class="md-header__button md-logo" aria-label="IAW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IAW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalacion PILA LAMP RedHat
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IAW" class="md-nav__button md-logo" aria-label="IAW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IAW
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Principal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acerca de
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Instalación de una pila LAMP en Ubuntu Server.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalacion PILA LAMP Ubuntu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Instalacion PILA LAMP RedHat
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Instalacion PILA LAMP RedHat
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-una-maquina-instancia-ec2-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de una máquina instancia EC2 en AWS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de una máquina instancia EC2 en AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-elegimos-una-ami-amazon-machine-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Elegimos una AMI (Amazon Machine Image)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-seleccionamos-un-tipo-de-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Seleccionamos un tipo de instancia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ip-elastica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. IP elástica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-obtener-una-clave-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Obtener una clave SSH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-conexion-a-nuestra-instancia-por-ssh-desde-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Conexión a nuestra instancia por ssh desde Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-la-pila-lamp-en-la-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de la pila LAMP en la instancia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación de la pila LAMP en la instancia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sh-de-pila-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      .sh de pila LAMP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=".sh de pila LAMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-actualizar-los-paquetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Actualizar los paquetes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-instalamos-el-servidor-web-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Instalamos el servidor web Apache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-iniciamos-el-servicio-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Iniciamos el servicio de Apache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configuramos-para-que-el-servicio-se-inicie-automaticamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configuramos para que el servicio se inicie automáticamente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-instalamos-mysql-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Instalamos MySQL Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-iniciamos-el-servicio-de-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Iniciamos el servicio de  MySQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-configuramos-el-servicio-para-que-se-inicie-automaticamente-en-cada-reinicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Configuramos el servicio para que se inicie automáticamente en cada reinicio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-instalamos-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Instalamos PHP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-instalamos-la-extension-de-php-para-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Instalamos la extensión de PHP para MySQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-reiniciamos-el-servicio-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Reiniciamos el servicio Apache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-copiamos-el-archivo-infophp-en-varwwwhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Copiamos el archivo info.php en var/www/html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-cambiamos-el-propietario-y-el-grupo-de-directorio-varwwwhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Cambiamos el propietario y el grupo de directorio /var/www/html
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sh-de-herramientas-de-la-pila-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      .sh de herramientas de la pila LAMP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=".sh de herramientas de la pila LAMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-importamos-el-script-de-variables-de-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Importamos el script de variables de entorno
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-actualizamos-los-paquetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Actualizamos los paquetes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-instalamos-los-modulos-de-php-necesarios-para-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Instalamos los módulos de PHP necesarios para phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-reiniciamos-el-servicio-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Reiniciamos el servicio Apache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-instalamos-la-utilidad-wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Instalamos la utilidad wget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-eliminamos-descargas-previas-de-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Eliminamos descargas previas de phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-descargamos-codigo-fuente-de-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Descargamos código fuente de phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-instalamos-utilidad-unzip" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Instalamos utilidad unzip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-descomprimimos-el-codigo-fuente-de-phpmyadmin-en-varwwwhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Descomprimimos el codigo fuente de phpMyAdmin en /var/www/html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-renombramos-el-directorio-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Renombramos el directorio phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-actualizamos-los-permisos-del-directorio-varwwwhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Actualizamos los permisos del directorio /var/www/html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-creamos-un-archivo-de-configuracion-a-partir-del-archivo-de-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Creamos un archivo de configuración a partir del archivo de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-generamos-un-valor-aleatorio-de-32-caracteres-para-la-variable-blowfish_secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Generamos un valor aleatorio de 32 caracteres para la variable blowfish_secret
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-modificamos-la-variable-blowfish_secret-en-el-archivo-de-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Modificamos la variable blowfish_secret en el archivo de configuración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-eliminamos-si-existe-alguna-base-de-datos-previa-de-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Eliminamos si existe alguna base de datos previa de phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-importamos-el-script-de-creacion-de-base-de-datos-de-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Importamos el script de creación de base de datos de phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-creamos-el-usuario-para-la-base-de-datos-y-le-asignamos-privilegios" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Creamos el usuario para la base de datos y le asignamos privilegios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-una-maquina-instancia-ec2-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de una máquina instancia EC2 en AWS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de una máquina instancia EC2 en AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-elegimos-una-ami-amazon-machine-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Elegimos una AMI (Amazon Machine Image)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-seleccionamos-un-tipo-de-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Seleccionamos un tipo de instancia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ip-elastica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. IP elástica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-obtener-una-clave-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Obtener una clave SSH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-conexion-a-nuestra-instancia-por-ssh-desde-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Conexión a nuestra instancia por ssh desde Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-la-pila-lamp-en-la-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de la pila LAMP en la instancia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación de la pila LAMP en la instancia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sh-de-pila-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      .sh de pila LAMP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=".sh de pila LAMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-actualizar-los-paquetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Actualizar los paquetes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-instalamos-el-servidor-web-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Instalamos el servidor web Apache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-iniciamos-el-servicio-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Iniciamos el servicio de Apache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configuramos-para-que-el-servicio-se-inicie-automaticamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configuramos para que el servicio se inicie automáticamente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-instalamos-mysql-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Instalamos MySQL Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-iniciamos-el-servicio-de-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Iniciamos el servicio de  MySQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-configuramos-el-servicio-para-que-se-inicie-automaticamente-en-cada-reinicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Configuramos el servicio para que se inicie automáticamente en cada reinicio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-instalamos-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Instalamos PHP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-instalamos-la-extension-de-php-para-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Instalamos la extensión de PHP para MySQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-reiniciamos-el-servicio-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Reiniciamos el servicio Apache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-copiamos-el-archivo-infophp-en-varwwwhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Copiamos el archivo info.php en var/www/html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-cambiamos-el-propietario-y-el-grupo-de-directorio-varwwwhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Cambiamos el propietario y el grupo de directorio /var/www/html
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sh-de-herramientas-de-la-pila-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      .sh de herramientas de la pila LAMP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=".sh de herramientas de la pila LAMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-importamos-el-script-de-variables-de-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Importamos el script de variables de entorno
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-actualizamos-los-paquetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Actualizamos los paquetes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-instalamos-los-modulos-de-php-necesarios-para-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Instalamos los módulos de PHP necesarios para phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-reiniciamos-el-servicio-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Reiniciamos el servicio Apache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-instalamos-la-utilidad-wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Instalamos la utilidad wget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-eliminamos-descargas-previas-de-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Eliminamos descargas previas de phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-descargamos-codigo-fuente-de-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Descargamos código fuente de phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-instalamos-utilidad-unzip" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Instalamos utilidad unzip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-descomprimimos-el-codigo-fuente-de-phpmyadmin-en-varwwwhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Descomprimimos el codigo fuente de phpMyAdmin en /var/www/html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-renombramos-el-directorio-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Renombramos el directorio phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-actualizamos-los-permisos-del-directorio-varwwwhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Actualizamos los permisos del directorio /var/www/html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-creamos-un-archivo-de-configuracion-a-partir-del-archivo-de-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Creamos un archivo de configuración a partir del archivo de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-generamos-un-valor-aleatorio-de-32-caracteres-para-la-variable-blowfish_secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Generamos un valor aleatorio de 32 caracteres para la variable blowfish_secret
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-modificamos-la-variable-blowfish_secret-en-el-archivo-de-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Modificamos la variable blowfish_secret en el archivo de configuración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-eliminamos-si-existe-alguna-base-de-datos-previa-de-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Eliminamos si existe alguna base de datos previa de phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-importamos-el-script-de-creacion-de-base-de-datos-de-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Importamos el script de creación de base de datos de phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-creamos-el-usuario-para-la-base-de-datos-y-le-asignamos-privilegios" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Creamos el usuario para la base de datos y le asignamos privilegios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="instalacion-de-una-pila-lamp-en-redhat">Instalación de una pila LAMP en RedHat</h1>
+<h2 id="creacion-de-una-maquina-instancia-ec2-en-aws">Creación de una máquina instancia EC2 en AWS</h2>
+<p>Para crear nuestra instancia EC2, vamos a Amazon EC2 en la consola AWS. Hacemos click al botón naranja <strong>"Lanzar Instancia"</strong> para abrir el asistente de creación de asistencias.</p>
+<p><img alt="Imagen1" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20160014.png" /></p>
+<h3 id="1-elegimos-una-ami-amazon-machine-image">1. Elegimos una AMI (Amazon Machine Image)</h3>
+<p>En este caso seleccionaremos el AMI de Ubuntu Server 22.04</p>
+<p><img alt="Imagen2" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20160806.png" /></p>
+<h3 id="2-seleccionamos-un-tipo-de-instancia">2. Seleccionamos un tipo de instancia</h3>
+<p>En la segunda pantalla del asistente de EC2, seleccionamos un tipo de instancia EC2. Un tipo de instancia es una configuración particular de CPU, memoria (RAM), almacenamiento y capacidad de red.</p>
+<p>AWS tiene una amplísima selección de tipos de instancias que abarca diferentes tipos de cargas de trabajo.</p>
+<p><img alt="Imagen3" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20160843.png" /></p>
+<p><strong>⚠️!!!IMPORTANTE¡¡¡⚠️</strong></p>
+<p>Tenemos que tener en cuenta en el apartado de "Configuración de red" el marcar las casillas para permitir el tráfico en HTTP y HTTPS ya que serán necesarias en la práctica.</p>
+<p><img alt="Imagen4" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20160918.png" /></p>
+<p>Ya realizada toda la configuración que tendrá nuestra instancia solo nos faltará dar clic al botón naranja <strong>"Lanzar instancia"</strong>.</p>
+<h3 id="3-ip-elastica">3. IP elástica</h3>
+<p>Ya creada la instancia, la página nos asignara una IP por defecto que continuamente va cambiando debido a la escasez de IPs (ya que estas no son ilimitadas). Asignaremos este tipo de IP a nuestra instancia para asi tener una IP estática que no va cambiando diariamente que es diseñada en la nube dinámica.</p>
+<p>Para acceder a este servicio nos iremos a :
+- Servicios (Arriba a la izquierda del inicio de AWS)
+  - Red y seguridad
+    - Direcciones IP elástica</p>
+<p>Empezaremos la creación de nuestra nueva IP elástica dandole clic a <strong>"Asignar la dirección IP elástica"</strong>.</p>
+<p><img alt="Imagen5" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20161002.png" /></p>
+<p>Al darle clic nos aparecera una ventana donde podremos seleccionar el grupo fronterizo de red, direcciones ip elásticas globales y etiquetas. Cuando realizamos la configuración que mas se adapte a nestras necesidas daremos clic a <strong>"Asignar"</strong>.</p>
+<p><img alt="Imagen6" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20161857.png" /></p>
+<p>Para asignar esta IP elástica desde el mismo servicio seleccionaremos nuestra IP elástica y le daremos clic a <strong>"Acciones &gt; Asociar la dirección IP elástica"</strong>.</p>
+<p><img alt="Imagen7" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20163443.png" /></p>
+<h3 id="4-obtener-una-clave-ssh">4. Obtener una clave SSH</h3>
+<p>Para obtener esta clave lo que haremos es dar clic a :</p>
+<ul>
+<li>Panel de control</li>
+<li>Seleccionamos nuestro curso<ul>
+<li>Contenidos</li>
+<li>Laboratorio para el alumnado<ul>
+<li>AWS Details</li>
+<li>Dowload PEM</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Imagen8" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20163516.png" /></p>
+<p>Antes de iniciar la máquina tendremos que cambiar los permisos del vockey.pem</p>
+<p>En el caso de <strong>Windows</strong>, para poder cambiar los permisos he utilizado <strong>Git Bash</strong> (una aplicación para entornos de Microsoft Windows que ofrece una capa de emulación para una experiencia de líneas de comandos de Git) que me permite realizar los cambios de permisos de manera más sencillas al usar comandos linux.</p>
+<p>Lo único que tendremos que hacer sera acceder al directorio por el comando <strong>cd</strong> y ponerle de permisos <strong>chmod 700</strong>.</p>
+<p><img alt="Imagen9" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20163542.png" /></p>
+<h3 id="5-conexion-a-nuestra-instancia-por-ssh-desde-visual-studio-code">5. Conexión a nuestra instancia por ssh desde Visual Studio Code</h3>
+<p>Antes de empezar la conexion por ssh nos tendremos que instalar una extensión en nuestro Visual Studio Code llamada <strong>"Remote - SSH"</strong> y de forma complementaria su otra extensión <strong>"Remote - SSH: Editing Configuration Files"</strong>.</p>
+<p><img alt="Imagen10" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20173806.png" /></p>
+<p>Instaladas las extensiones procederemos a editar el archivo <strong>/"Usuario"/.ssh/config</strong> dandole al engranaje que se encuentra al lado de <strong>SSH</strong></p>
+<p><img alt="Imagen11" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20194845.png" /></p>
+<p>Dentro del archivo escribiremos editaremos las lineas de este archivo de esta manera</p>
+<pre><code>Host Nombre del host de la máquina
+
+
+  HostName (DNS público que se consigue en **EC2 &gt; Instancias &gt; Conectar &gt; Cliente SSH**)
+
+
+  IdentityFile (La dirección de la ubicación del archivo vockey.pem)
+
+
+  User (Nombre de usuario asignado a la máquina que se encuntra en **EC2 &gt; Instancias &gt; Conectar &gt; Conexión de la instancia EC2)
+</code></pre>
+<p>Ahora solo nos queda conectarnos a nuestra instanca por ssh dando clic derecho a nuestra instancia y elegir la conexion en la ventana actual o abrir una nueva ventana.</p>
+<p><img alt="Imagen12" src="https://github.com/SamuelPadillaS/Practica2-IAW/blob/main/images/Screenshot%202023-10-19%20195032.png" /></p>
+<h2 id="instalacion-de-la-pila-lamp-en-la-instancia">Instalación de la pila LAMP en la instancia</h2>
+<h3 id="sh-de-pila-lamp">.sh de pila LAMP</h3>
+<p>Lo primero de todo será realizar una carpeta en nuestra máquina para guardar todos nuestros scripts y poder localizarlos facilmente.</p>
+<p>Ya creada la carpeta nos tocará realizar nuestro archivo <strong>.sh</strong> donde realizaremos la instalación de nuestra pila LAMP ( en nuestro caso lo hemos llamado <strong>"install_lamp.sh"</strong>). También hay que darle los permisos correspondiente al archivo  que serían <strong>chmod 700</strong>.</p>
+<p><strong>⚠️!!!IMPORTANTE¡¡¡⚠️</strong></p>
+<p>A la hora de realizar todos nuestros scripts es importante escribir estos dos comandos:</p>
+<pre><code>#!/bin/bash
+</code></pre>
+<p>Con este comando indicamos al sistema operativo que inicie el shell especificado para ejecutar los comandos que siguen en el script.</p>
+<pre><code>set -x
+</code></pre>
+<p>Habilitamos para que se muestre los comandos que se van ejecutando.</p>
+<p>Ya aprendido todo esto, podemos continuar con la creación de nuestro script.</p>
+<h4 id="1-actualizar-los-paquetes">1. Actualizar los paquetes</h4>
+<pre><code>apt update -y
+</code></pre>
+<h4 id="2-instalamos-el-servidor-web-apache">2. Instalamos el servidor web Apache</h4>
+<pre><code>dnf install httpd -y
+</code></pre>
+<h4 id="3-iniciamos-el-servicio-de-apache">3. Iniciamos el servicio de Apache</h4>
+<pre><code>apt install mysql-server -y
+</code></pre>
+<h4 id="4-configuramos-para-que-el-servicio-se-inicie-automaticamente">4. Configuramos para que el servicio se inicie automáticamente</h4>
+<pre><code>systemctl enable httpd
+</code></pre>
+<h4 id="5-instalamos-mysql-server">5. Instalamos MySQL Server</h4>
+<pre><code>dnf install mysql-server -y
+</code></pre>
+<h4 id="6-iniciamos-el-servicio-de-mysql">6. Iniciamos el servicio de  MySQL</h4>
+<pre><code>systemctl start mysqld
+</code></pre>
+<h4 id="7-configuramos-el-servicio-para-que-se-inicie-automaticamente-en-cada-reinicio">7. Configuramos el servicio para que se inicie automáticamente en cada reinicio</h4>
+<pre><code>systemctl enable mysqld
+</code></pre>
+<h4 id="8-instalamos-php">8. Instalamos PHP</h4>
+<pre><code>dnf install php -y
+</code></pre>
+<h4 id="9-instalamos-la-extension-de-php-para-mysql">9. Instalamos la extensión de PHP para MySQL</h4>
+<pre><code>dnf install php-mysqlnd -y
+</code></pre>
+<h4 id="10-reiniciamos-el-servicio-apache">10. Reiniciamos el servicio Apache</h4>
+<pre><code>systemctl restart httpd
+</code></pre>
+<h4 id="11-copiamos-el-archivo-infophp-en-varwwwhtml">11. Copiamos el archivo info.php en var/www/html</h4>
+<pre><code>cp ../php/info.php /var/www/html
+</code></pre>
+<h4 id="12-cambiamos-el-propietario-y-el-grupo-de-directorio-varwwwhtml">12. Cambiamos el propietario y el grupo de directorio /var/www/html</h4>
+<pre><code>chown -R apache:apache /var/www/html
+</code></pre>
+<h3 id="sh-de-herramientas-de-la-pila-lamp">.sh de herramientas de la pila LAMP</h3>
+<p>Ya realizado esste script, nos tocará realizar otro archivo .sh donde realizaremos instalaciones de ciertas herramientas para nuestra pila LAMP y su debida configuración.
+Antes de empezar con el script, tendremos que crear una carpeta dentro de nuestra práctica (<strong>"php/info.php"</strong>) donde guardaremos ciertos datos y configuraciones de las herramientas instaladas. También realizaremos un archivo <strong>".env"</strong> donde se especifica el valor de unos variables que usaremos más adelante. A continuación les enseñaré la estructura del script <strong>"install_tools.sh"</strong>:</p>
+<p>El contenido del <strong>.env</strong> es el siguiente:</p>
+<pre><code>PMA_USER=pma_user
+PMA_PASS=pma_pass
+PMA_DB=phpmyadmin
+</code></pre>
+<p>El contenido del <strong>info.php</strong> es el siguiente:</p>
+<pre><code>&lt;?php
+
+phpinfo();
+
+?&gt;
+</code></pre>
+<p>Ya sabiendo el contenido de ambas carpetas podemos proseguir con el <strong>.sh</strong>:</p>
+<pre><code>!/bin/bash
+</code></pre>
+<pre><code>set -x
+</code></pre>
+<h4 id="1-importamos-el-script-de-variables-de-entorno">1. Importamos el script de variables de entorno</h4>
+<p>El comando que se escribe en el .sh es el siguiente:</p>
+<pre><code>source .env
+</code></pre>
+<h4 id="2-actualizamos-los-paquetes">2. Actualizamos los paquetes</h4>
+<pre><code>dnf update -y
+</code></pre>
+<h4 id="3-instalamos-los-modulos-de-php-necesarios-para-phpmyadmin">3. Instalamos los módulos de PHP necesarios para phpMyAdmin</h4>
+<pre><code>sudo dnf install php-mbstring php-zip php-json php-gd php-fpm php-xml -y
+</code></pre>
+<h4 id="4-reiniciamos-el-servicio-apache">4. Reiniciamos el servicio Apache</h4>
+<pre><code>systemctl restart httpd
+</code></pre>
+<h4 id="5-instalamos-la-utilidad-wget">5. Instalamos la utilidad wget</h4>
+<pre><code>dnf install wget -y
+</code></pre>
+<h4 id="6-eliminamos-descargas-previas-de-phpmyadmin">6. Eliminamos descargas previas de phpMyAdmin</h4>
+<pre><code>rm -rf /tmp/phpMyAdmin-5.2.1-all-languages.zip
+</code></pre>
+<h4 id="7-descargamos-codigo-fuente-de-phpmyadmin">7. Descargamos código fuente de phpMyAdmin</h4>
+<pre><code>wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip -P /tmp
+</code></pre>
+<h4 id="8-instalamos-utilidad-unzip">8. Instalamos utilidad unzip</h4>
+<pre><code>dnf install unzip -y
+</code></pre>
+<h4 id="9-descomprimimos-el-codigo-fuente-de-phpmyadmin-en-varwwwhtml">9. Descomprimimos el codigo fuente de phpMyAdmin en /var/www/html</h4>
+<pre><code>unzip /tmp/phpMyAdmin-5.2.1-all-languages.zip -d /var/www/html -y
+</code></pre>
+<h4 id="10-renombramos-el-directorio-phpmyadmin">10. Renombramos el directorio phpMyAdmin</h4>
+<pre><code>mv /var/www/html/phpMyAdmin-5.2.1-all-languages /var/www/html/phpmyadmin
+</code></pre>
+<h4 id="11-actualizamos-los-permisos-del-directorio-varwwwhtml">11. Actualizamos los permisos del directorio /var/www/html</h4>
+<pre><code>chown -R apache:apache /var/www/html
+</code></pre>
+<h4 id="12-creamos-un-archivo-de-configuracion-a-partir-del-archivo-de-ejemplo">12. Creamos un archivo de configuración a partir del archivo de ejemplo</h4>
+<pre><code>cp /var/www/html/phpmyadmin/config.sample.inc.php /var/www/html/phpmyadmin/config.inc.php
+</code></pre>
+<h4 id="13-generamos-un-valor-aleatorio-de-32-caracteres-para-la-variable-blowfish_secret">13. Generamos un valor aleatorio de 32 caracteres para la variable blowfish_secret</h4>
+<pre><code>RANDOM_VALUE=`openssl rand -hex 16`
+</code></pre>
+<h4 id="14-modificamos-la-variable-blowfish_secret-en-el-archivo-de-configuracion">14. Modificamos la variable blowfish_secret en el archivo de configuración</h4>
+<pre><code>sed &quot;/blowfish_secret/a \$cfg\['TempDir'\] = '/tmp';&quot; /var/www/html/phpmyadmin/config.inc.php
+</code></pre>
+<h4 id="15-eliminamos-si-existe-alguna-base-de-datos-previa-de-phpmyadmin">15. Eliminamos si existe alguna base de datos previa de phpMyAdmin</h4>
+<pre><code>mysql -u root &lt;&lt;&lt; &quot;DROP DATABASE IF EXISTS phpmyadmin&quot;
+</code></pre>
+<h4 id="16-importamos-el-script-de-creacion-de-base-de-datos-de-phpmyadmin">16. Importamos el script de creación de base de datos de phpMyAdmin</h4>
+<pre><code>mysql -u root &lt; /var/www/html/phpmyadmin/sql/create_tables.sql
+</code></pre>
+<h4 id="17-creamos-el-usuario-para-la-base-de-datos-y-le-asignamos-privilegios">17. Creamos el usuario para la base de datos y le asignamos privilegios</h4>
+<pre><code>mysql -u root &lt;&lt;&lt; &quot;DROP USER IF EXISTS $PMA_USER@'%'&quot;
+mysql -u root &lt;&lt;&lt; &quot;CREATE USER $PMA_USER@'%' IDENTIFIED BY '$PMA_PASS'&quot;
+mysql -u root &lt;&lt;&lt; &quot;GRANT ALL PRIVILEGES ON $PMA_DB.* TO $PMA_USER@'%'&quot;
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+    
+  </body>
+</html>
