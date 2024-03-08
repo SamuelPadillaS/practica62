@@ -3,5 +3,7 @@ site_name: IAW
 nav:
     - Principal: index.md
     - Acerca de: about.md
+    - Instalacion PILA LAMP Ubuntu: Instalación de una pila LAMP en Ubuntu Server.md
+    - Instalacion PILA LAMP RedHat: Instalación de una pila LAMP en RedHat.md
 
 theme: material
