@@ -7,9 +7,6 @@ Para crear nuestra instancia EC2, vamos a Amazon EC2 en la consola AWS. Hacemos 
 ### 1. Elegimos una AMI (Amazon Machine Image)
 
 
-
-
-
 ![Imagen Paso 1](https://user-images.githubusercontent.com/114667075/235878557-2ffcf791-f178-4454-82c0-80fd72081fe6.png)
 
 ### Paso 2. Elija un tipo de instancia
