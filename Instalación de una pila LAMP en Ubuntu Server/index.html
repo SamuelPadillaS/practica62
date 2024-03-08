@@ -1,0 +1,513 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+    
+    
+      
+        <title>Instalación de una pila LAMP en Ubuntu Server - IAW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalacion-de-una-pila-lamp-en-ubuntu-server" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IAW" class="md-header__button md-logo" aria-label="IAW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IAW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalación de una pila LAMP en Ubuntu Server
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IAW" class="md-nav__button md-logo" aria-label="IAW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IAW
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Principal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acerca de
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-una-maquina-instancia-ec2-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de una máquina instancia EC2 en AWS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de una máquina instancia EC2 en AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-elegimos-una-ami-amazon-machine-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Elegimos una AMI (Amazon Machine Image)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-elija-un-tipo-de-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2. Elija un tipo de instancia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-ip-elastica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3. IP elástica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-lanzar-nuestra-instancia-y-obtener-una-clave-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.  Lanzar nuestra instancia y obtener una clave SSH
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-la-pila-lamp-en-la-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de la pila LAMP en la instancia
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="instalacion-de-una-pila-lamp-en-ubuntu-server">Instalación de una pila LAMP en Ubuntu Server</h1>
+<h2 id="creacion-de-una-maquina-instancia-ec2-en-aws">Creación de una máquina instancia EC2 en AWS</h2>
+<p>Para crear nuestra instancia EC2, vamos a Amazon EC2 en la consola AWS. Hacemos click al botón naranja <strong>"Lanzar Instancia"</strong> para abrir el asistente de creación de asistencias.</p>
+<p>![Imagen 1] (images/Screenshot 2023-10-19 160014.png)</p>
+<h3 id="1-elegimos-una-ami-amazon-machine-image">1. Elegimos una AMI (Amazon Machine Image)</h3>
+<p><img alt="Imagen Paso 1" src="https://user-images.githubusercontent.com/114667075/235878557-2ffcf791-f178-4454-82c0-80fd72081fe6.png" /></p>
+<h3 id="paso-2-elija-un-tipo-de-instancia">Paso 2. Elija un tipo de instancia</h3>
+<p>En la segunda pantalla del asistente de EC2, seleccionamos un tipo de instancia EC2. Un tipo de instancia es una configuración particular de CPU, memoria (RAM), almacenamiento y capacidad de red.</p>
+<p>AWS tiene una amplísima selección de tipos de instancias que abarca diferentes tipos de cargas de trabajo. </p>
+<p><img alt="Imagen Paso 2" src="https://user-images.githubusercontent.com/114667075/235849812-924b7e24-6a1d-4b0d-b7d4-bd304f019bd1.png" /></p>
+<p><strong>⚠️IMPORTANTE!!!⚠️</strong></p>
+<p>Tenemos que tener en cuenta en el apartado de "Configuración de red" el marcar las casillas para permitir el tráfico en HTTP y HTTPS ya que serán necesarias en la práctica.</p>
+<p><img alt="Configuración de red" src="https://user-images.githubusercontent.com/114667075/235878884-f34e1c61-2e62-41dc-9c6d-1cdbe9a6efa9.png" /></p>
+<p>Ya realizada toda la configuración que tendrá nuestra instancia solo nos faltará dar clic al botón naranja <strong>"Lanzar instancia"</strong>.</p>
+<p><img alt="Lanzar instancia" src="https://user-images.githubusercontent.com/114667075/235879113-3bd66e1a-9913-408f-bbbf-74bbdf75861b.png" /></p>
+<h3 id="paso-3-ip-elastica">Paso 3. IP elástica</h3>
+<p>Ya creada la instancia, la página nos asignara una IP por defecto que continuamente va cambiando debido a la escasez de IPs (ya que estas no son ilimitadas). Asignaremos este tipo de IP a nuestra instancia para asi tener una IP estática que no va cambiando diariamente que es diseñada en la nube dinámica.</p>
+<p>Para acceder a este servicio nos iremos a :
+- Servicios (Arriba a la izquierda del inicio de AWS)
+  - Red y seguridad
+    - Direcciones IP elástica</p>
+<p>Empezaremos la creación de nuestra nueva IP elástica dandole clic a <strong>"Asignar la dirección IP elástica"</strong>.</p>
+<p><img alt="&quot;Asignar la dirección IP elástica&quot;" src="https://user-images.githubusercontent.com/114667075/235883328-c6b553fb-fa17-479d-b08b-b2224c362f47.png" /></p>
+<p>Al darle clic nos aparecera una ventana donde podremos seleccionar el grupo fronterizo de red, direcciones ip elásticas globales y etiquetas. Cuando realizamos la configuración que mas se adapte a nestras necesidas daremos clic a <strong>"Asignar"</strong>.</p>
+<p><img alt="&quot;Asignar&quot;" src="https://user-images.githubusercontent.com/114667075/235884032-54baf32b-179c-41df-a48c-9e5fef8bc1a4.png" /></p>
+<p>Para asignar esta IP elástica desde el mismo servicio seleccionaremos nuestra IP elástica y le daremos clic a <strong>"Acciones &gt; Asociar la dirección IP elástica"</strong>.</p>
+<p><img alt="Donde asociar la ip a la instancia" src="https://user-images.githubusercontent.com/114667075/235886439-4fea714e-1730-4c89-aabe-d905a64ab9fd.png" /></p>
+<p>Luego de darle clic, nos saldra una ventana donde seleccionaremos la instancia a la que queremos asignar la dirección de IP elástica y le daremos clic a <strong>"Asociar"</strong>.</p>
+<p><img alt="Asociamos la IP elástica" src="https://user-images.githubusercontent.com/114667075/235887078-f69e9065-7b45-4d90-96a5-68e93a1ed87c.png" /></p>
+<h3 id="paso-3-lanzar-nuestra-instancia-y-obtener-una-clave-ssh">Paso 3.  Lanzar nuestra instancia y obtener una clave SSH</h3>
+<p>Para lanzar nuestra instancia es tan sencillo como seleccionar aquella instancia que queramos lanzar y damos clic a <strong>"Lanzar instancia"</strong>.</p>
+<p><img alt="Lanzar instancia" src="https://user-images.githubusercontent.com/114667075/235887904-8d123641-bd74-4292-b644-97b619d0a0c8.png" /></p>
+<p>Para obtener esta clave lo que haremos es dar clic a :</p>
+<ul>
+<li>Panel de control</li>
+<li>Seleccionamos nuestro curso<ul>
+<li>Contenidos</li>
+<li>Laboratorio para el alumnado<ul>
+<li>AWS Details</li>
+<li>Dowload PEM</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Dowload PEM" src="https://user-images.githubusercontent.com/114667075/235889667-fd1110cb-7fbd-48fb-bc9c-7f9131a99b7a.png" /></p>
+<p>Ya obtenido el .pem lo único que tendremos que hacer es cambiar los permisos de este para poder usarlo con total libertad y el nombre a <strong>"vockey.pem"</strong>. El motivo del cambio del nombre del archivo es debido a que es nuestras instancias son asignadas estos nombres en espeícifco para poder conectarse por ssh.</p>
+<p>En el caso de <strong>Windows</strong>, para poder cambiar los permisos de tu usuario daremos clic derecho a la clave y nos iremos a :
+- Propiedades
+  - Seguridad
+    - Opciones avanzadas
+      - Seleccionamos nuestro usuario o grupos de usuario al que queramos aplicar los cambios dando doble clic izquierdo
+        - Y en permisos básicos marcamos la casilla de "Control total"</p>
+<p><img alt="Screenshot 2023-05-09 084030" src="https://user-images.githubusercontent.com/114667075/237015298-733a6d5c-5f71-4f8e-aff1-55ec025a19ae.jpg" /></p>
+<p>Ya solo nos queda conectarnos a nuestra instancia por ssh desde Visual Studio Code (También tienes la opción de acceder a la instancia desde un terminal dentro de la página web).</p>
+<p>Antes de empezar la conexion por ssh nos tendremos que instalaar una extensión en nuestro Visual Studio Code llamada <strong>"Remote - SSH"</strong> y de forma complementaria su otra extensión <strong>"Remote - SSH: Editing Configuration Files"</strong>.</p>
+<p><img alt="Screenshot 2023-05-09 085636" src="https://user-images.githubusercontent.com/114667075/237018215-53c6668f-c682-424a-b3fb-7cd94f86a947.png" /></p>
+<p>Instaladas las extensiones procederemos a seguir los siguientes pasos:</p>
+<ol>
+<li>
+<p>En el lado izquierdo nos aparecera un nuevo icono con forma de monitor en el que daremos clic izquierdo para abrir el menu  de ssh</p>
+</li>
+<li>
+<p>Dentro del menú, nos saldra una carpeta o contenedor llamada <strong>"SSH"</strong> en el que pasaremos el raton por encima y nos aparecera un engranaje donde daremos clic izquierdo para continuar con la conexión. Al dar clic, nos daran a elegir para acceder a dos directorios distintos ( en nuestro caso daremos clic al directorio de ".../config"</p>
+</li>
+<li>
+<p>Ya accediendo al archivo config tendremos que poner las credenciales correspondientes como la IP o el nombre de usuario.</p>
+</li>
+</ol>
+<p><img alt="Screenshot 2023-05-09 084941" src="https://user-images.githubusercontent.com/114667075/237020844-d95ceeb6-80a1-4616-ac6e-c050db56b931.jpg" /></p>
+<p>Ahora solo nos queda conectarnos a nuestra instanca por ssh dando clic derecho a nuestra instancia y elegir la conexion en la ventana actual o abrir una nueva ventana.</p>
+<p><img alt="Screenshot 2023-05-09 090956" src="https://user-images.githubusercontent.com/114667075/237021979-f49ab02d-a124-47c6-a5e6-38ed1d60c0fb.png" /></p>
+<h2 id="instalacion-de-la-pila-lamp-en-la-instancia">Instalación de la pila LAMP en la instancia</h2>
+<p>Lo primero de todo será realizar una carpeta en nuestra máquina para guardar todos nuestros scripts y poder localizarlos facilmente.</p>
+<p>Ya creada la carpeta nos tocará realizar nuestro archivo .sh donde realizaremos la instalación de nuestra pila LAMP ( en nuestro caso lo hemos llamado "install_lamp.sh")</p>
+<p><strong>⚠️IMPORTANTE!!!⚠️</strong></p>
+<p>A la hora de realizar todos nuestros scripts es importante escribir estos dos comandos:</p>
+<p>`</p>
+<h1 id="binbash">!/bin/bash</h1>
+<p>`</p>
+<p>Con este comando indicamos al sistema operativo que invoque el shell especificado para ejecutar los comandos que siguen en el script.</p>
+<p><code>set -x</code></p>
+<p>Habilitamos para que se muestre los comandos que se van ejecutando.</p>
+<p>Ya aprendido todo esto, podemos continuar con la creación de nuestro script.</p>
+<h3 id="1-actualizamos-los-repositorios">1. Actualizamos los repositorios.</h3>
+<p><code>apt update</code></p>
+<h3 id="2-actualizamos-paquetes">2. Actualizamos paquetes.</h3>
+<p><code>apt upgrade -y</code></p>
+<h3 id="3-instalamos-el-servidor-web-apache">3. Instalamos el servidor web Apache.</h3>
+<p><code>apt install apache2 -y</code></p>
+<h3 id="4-instalamos-el-servidor-mysql">4. Instalamos el servidor MYSQL.</h3>
+<p><code>apt install mysql-server -y</code></p>
+<h3 id="51-instalamos-los-modulos-de-php-necsarios">5.1. Instalamos los módulos de PHP necsarios.</h3>
+<p><code>apt install php libapache2-mod-php php-mysql -y</code></p>
+<h3 id="52-reiniciamos-el-servidor-web-apache">5.2. Reiniciamos el servidor web Apache.</h3>
+<p><code>systemctl restart apache2</code></p>
+<h3 id="53-copiamos-el-archivo-de-prueba-de-php-al-directorio-de-apache">5.3. Copiamos el archivo  de prueba de PHP al directorio de Apache.</h3>
+<p><code>cp ../php/index.php /var/www/html</code></p>
+<h3 id="54-copiamos-el-archivo-dirconf-al-directorio-de-configuracion-de-apache">5.4. Copiamos el archivo dir.conf al directorio de configuración de Apache.</h3>
+<p><code>cp ../conf/dir.conf /etc/apache2/mods-available</code></p>
+<h3 id="6-reiniciamos-el-servidor-web-apache">6.  Reiniciamos el servidor web Apache.</h3>
+<p><code>systemctl restart apache2</code></p>
+<p>Ya realizado esste script, nos tocará realizar otro archivo .sh donde realizaremos instalaciones de ciertas herramientas para nuestra pila LAMP y su debida configuración.
+Antes de empezar con el script, tendremos que crear un par de carpetas dentro de nuestra práctica ("conf" y "php") donde guardaremos ciertos datos y configuraciones de las herramientas instaladas a continuación.</p>
+<h3 id="11-instalacion-de-las-dependencias">1.1. Instalación de las dependencias.</h3>
+<p><code>apt install php-mbstring php-zip php-gd php-json php-curl -y</code></p>
+<h3 id="12-descargamos-el-codigo-fuente-desde-la-pagina-oficial">1.2. Descargamos el código fuente desde la página oficial.</h3>
+<p><code>wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip -O /tmp/phpmyadmin.zip</code></p>
+<h3 id="13-instalamos-la-utilidad-unzip">1.3. Instalamos la utilidad unzip.</h3>
+<p><code>apt install unzip -y</code></p>
+<h3 id="14-descomprimimos-el-codigo-fuente-de-phpmyadmin">1.4. Descomprimimos el código fuente de phpMyAdmin.</h3>
+<p><code>unzip -o /tmp/phpmyadmin.zip -d /var/www/html</code></p>
+<h3 id="15-eliminamos-las-instalaciones-previas-de-phpmyadmin">1.5. Eliminamos las instalaciones previas de phpMyAdmin.</h3>
+<p><code>rm -rf /var/www/html/phpmyadmin</code></p>
+<h3 id="16-renombramos-el-directorio-de-phpmyadmin">1.6. Renombramos el directorio de phpMyAdmin.</h3>
+<p><code>mv /var/www/html/phpMyAdmin-5.2.1-all-languages /var/www/html/phpmyadmin</code></p>
+<h3 id="17-creamos-el-archivo-de-configuracion-a-partir-del-archivo-de-ejemplo">1.7. Creamos el archivo de configuración a partir del archivo de ejemplo.</h3>
+<p><code>mv /var/www/html/phpmyadmin/config.sample.inc.php /var/www/html/config.inc.php</code></p>
+<h3 id="18-creamos-la-base-de-datos-de-phpmyadmin">1.8. Creamos la base de datos de phpMyAdmin.</h3>
+<p><code>mysql -u root &lt; /var/www/html/phpmyadmin/sql/create_tables.sql</code></p>
+<h3 id="19-creamos-un-usuario-en-mysql-para-phpmyadmin">1.9. Creamos un usuario en MySQL para phpMyAdmin.</h3>
+<p><code>mysql -u root &lt;&lt;&lt; "DROP USER IF EXISTS $PHPMYADMIN_USER@localhost;"</code></p>
+<p><code>mysql -u root &lt;&lt;&lt; "CREATE USER $PHPMYADMIN_USER@localhost IDENTIFIED BY '$PHPMYADMIN_PASS';"</code></p>
+<p><code>mysql -u root &lt;&lt;&lt; "GRANT ALL PRIVILEGES ON phpmyadmin.* TO $PHPMYADMIN_USER@localhost;"</code></p>
+<p>Estas variables que veis en el comando serán dadas y escritas dentro del script. Se recomienda poner estas variables al principio para que sea fácil identificarlas y poder cambiarlas rapidamente.</p>
+<p><code>Variables de configuración</code></p>
+<p>`</p>
+<h1 id="-">-------------------------------------------------------------------------------</h1>
+<p>`</p>
+<p><code>PHPMYADMIN_USER=phpmyadmin_user</code></p>
+<p><code>PHPMYADMIN_PASS=phpmyadmin_pass</code></p>
+<p>`</p>
+<h1 id="-_1">-------------------------------------------------------------------------------</h1>
+<p>`</p>
+<h3 id="110-modificamos-el-propietario-y-el-grupo">1.10. Modificamos el propietario y el grupo.</h3>
+<p><code>chown -R www-data:www-data /var/www/html</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+    
+  </body>
+</html>
